@@ -13,19 +13,21 @@ export default function ViewIncomeModal({ show, name, id }) {
   return (
     <div className="fixed inset-0 z-50 bg-gray-300 bg-opacity-80 ">
       <div id="modal" className="flex items-center justify-center h-screen ">
-        <div className="flex-col justify-center bg-white rounded-lg p-5 w-2/4">
-          <div className="flex justify-between gap-20 text-zinc-600 mb-10 items-center">
-            <div className="flex gap-4 items-center ">
-              <h1 className="font-bold text-3xl ">Expense - {name} </h1>
+        <div className="flex-col justify-center w-5/6 p-5 bg-white rounded-lg sm:2/4">
+          <div className="flex items-start justify-between gap-6 mb-10 sm:gap-20 sm:items-center text-zinc-600">
+            <div className="flex items-center gap-4 ">
+              <h1 className="text-base font-bold sm:text-3xl ">
+                Expense - {name}
+              </h1>
               <button
-                className="bg-red-500 text-white text-2xl  rounded-lg p-2"
+                className="p-2 text-base text-white bg-red-500 rounded-lg sm:text-2xl"
                 onClick={() => deleteCategory()}
               >
                 Delete Expense
               </button>
             </div>
             <span
-              className="px-2 h-8 text-white text-xl bg-red-500 cursor-pointer"
+              className="h-8 px-2 text-xl text-white bg-red-500 cursor-pointer"
               onClick={() => {
                 show(false);
                 window.location.reload();
@@ -35,7 +37,7 @@ export default function ViewIncomeModal({ show, name, id }) {
             </span>
           </div>
           <div className="mb-10">
-            <ul className="flex flex-col gap-7 text-2xl font-semibold">
+            <ul className="flex flex-col text-2xl font-semibold gap-7">
               {expenses.map((expense) => {
                 if (expense.categoryId === id) {
                   return (
@@ -45,7 +47,7 @@ export default function ViewIncomeModal({ show, name, id }) {
                     >
                       <h3>{expense.description}</h3>
                       <span
-                        className="px-2 text-white text-xl bg-red-500 cursor-pointer"
+                        className="px-2 text-xl text-white bg-red-500 cursor-pointer"
                         onClick={() => {
                           {
                             deleteExpense(expense.id);

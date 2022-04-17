@@ -46,7 +46,7 @@ export default function ExpenseCard({ name, amount, max, id, total }) {
       className="flex flex-col gap-5 p-5 bg-gray-400 border border-gray-200 rounded-lg bg-opacity-20"
       style={overExpenseLimit()}
     >
-      <div className="flex items-center justify-between text-3xl">
+      <div className="flex flex-col items-center justify-between gap-5 text-3xl sm:gap-0 sm:flex-row">
         <div>{name}</div>
         <div>
           {currencyFormatter.format(amount)}
@@ -76,7 +76,7 @@ export default function ExpenseCard({ name, amount, max, id, total }) {
           </>
         ) : (
           <button
-            className="  p-3 ml-auto text-gray-500 bg-white border border-gray-500 rounded-lg"
+            className="p-3 ml-auto text-gray-500 bg-white border border-gray-500 rounded-lg "
             onClick={() => {
               setShowViewIncomeModal(true);
             }}
