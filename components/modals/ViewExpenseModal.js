@@ -12,7 +12,7 @@ export default function ViewIncomeModal({ show, name, id }) {
   return (
     <div className="fixed inset-0 z-50 bg-gray-300 bg-opacity-80 ">
       <div id="modal" className="flex items-center justify-center h-screen ">
-        <div className="flex-col justify-center w-5/6 p-5 bg-white rounded-lg sm:2/4">
+        <div className="flex-col justify-center p-5 bg-white rounded-lg sm:2/4">
           <div className="flex items-start justify-between gap-6 mb-10 sm:gap-20 sm:items-center text-zinc-600">
             <div className="flex items-center gap-4 ">
               <h1 className="text-base font-bold sm:text-3xl ">
