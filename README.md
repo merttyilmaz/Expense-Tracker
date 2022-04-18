@@ -2,8 +2,7 @@ I used Next.js and Tailwind CSS. Next.js has file based routing so no need for a
 
 ----------------------------------------------------------------------------------------------
 
-Hardest thing I did in this project was adding the localStorage hook because Next.js is a server side rendering framework which means that it renders on the server and html is sent to the client. Servers don't have localStorage so the workaround for it is that we have add  
-checks and controls to see if the code is on the server or the client.
+Hardest thing I did in this project was adding the localStorage hook because Next.js is a server side rendering framework which means that it renders on the server and HTML is sent to the client. Servers don't have localStorage so the workaround for it is that we have to add checks and controls to see if the code is on the server or the client.
 
 ----------------------------------------------------------------------------------------------
 
@@ -22,7 +21,3 @@ Financial Forecast page shows the percantages of incomes and expense categories.
 ----------------------------------------------------------------------------------------------
 
 yarn or npm i to install dependencies. yarn dev or npm run dev to start development build.
-
-
-
-
