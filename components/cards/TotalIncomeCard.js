@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useExpense } from "../../context/ExpenseContext";
 import BaseCard from "./BaseCard";
-
+//This component uses a card to create the Total Card which as a gray background and displays the total amount of spent and earned income
 export default function TotalIncomeCard({ show }) {
   const { expenses, incomes } = useExpense();
   const [maxAmount, setMaxAmount] = useState(0);

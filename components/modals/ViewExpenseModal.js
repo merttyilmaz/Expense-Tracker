@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { useExpense } from "../../context/ExpenseContext";
-
+//This component is a modal that allows the user to view an expense
 export default function ViewIncomeModal({ show, name, id }) {
   const { expenses, deleteExpenseCategory, deleteExpense } = useExpense();
 

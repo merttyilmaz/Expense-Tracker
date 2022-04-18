@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { useExpense } from "../../context/ExpenseContext";
-
+//This component is a modal that allows the user to add an income
 export default function AddIncomeModal({ show }) {
   const [showRegularAmount, setShowRegularAmount] = useState(true);
   const nameRef = useRef();
@@ -34,7 +34,6 @@ export default function AddIncomeModal({ show }) {
     });
 
     show(false);
-    //window.location.reload();
   };
 
   return (

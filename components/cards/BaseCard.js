@@ -3,12 +3,12 @@ import { currencyFormatter } from "../../utils";
 import AddExpenseModal from "../../components/modals/AddExpenseModal";
 import ViewExpenseModal from "../../components/modals/ViewExpenseModal";
 import ViewIncomeModal from "../../components/modals/ViewIncomeModal";
-
+//This component is used on main page. It's a dynamic component that renders the cards based on the user's incomes and expenses
 export default function ExpenseCard({ name, amount, max, id, total }) {
   const [showExpenseModal, setShowExpenseModal] = useState(false);
   const [showViewExpenseModal, setShowViewExpenseModal] = useState(false);
   const [showViewIncomeModal, setShowViewIncomeModal] = useState(false);
-
+  //This function returns the cards progress bar colors.
   const getProgressBarColor = () => {
     const percentage = amount / max;
 
@@ -31,9 +31,9 @@ export default function ExpenseCard({ name, amount, max, id, total }) {
       }
     }
   };
-
+  //This function returns the cards background colors. Regular cards have white background but if a cards amount is maxed out, it has a red background.
   const overExpenseLimit = () => {
-    if (amount >= max) {
+    if (amount >= max && max !== 0) {
       return { backgroundColor: "rgba(255, 0, 0, 0.1)" };
     } else if (total) {
       return { backgroundColor: "white" };

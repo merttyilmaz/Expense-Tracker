@@ -1,11 +1,11 @@
 import Head from "next/head";
 import { useExpense } from "../context/ExpenseContext";
 import "chart.js/auto";
-import { Doughnut } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2"; // Used doughnut chart because I was inspired from ISBANK mobile app
 
 export default function FinancialForecast() {
   const { expenseCategories, getExpenses, incomes } = useExpense();
-
+  //This function calculates expense categories and their total amount
   const expenseDataCalculation = () => {
     const labels = expenseCategories?.map((category) => category.name);
     const data = expenseCategories?.map((category) => {
@@ -27,7 +27,7 @@ export default function FinancialForecast() {
       ],
     };
   };
-
+  //This function calculates incomes and their total amount
   const incomeDataCalculation = () => {
     const labels = incomes?.map((income) => income.name);
     const data = incomes?.map((income) => {
@@ -56,11 +56,13 @@ export default function FinancialForecast() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="p-3 sm:p-10 ">
+      <main className="flex-grow p-3 sm:p-10 ">
         <div className="flex flex-col max-w-screen-xl gap-10 p-8 mx-auto my-10 bg-white rounded-lg">
           <div className="flex flex-col items-center justify-center md:flex-row sm:justify-between">
             <div>
-              <h1 className="text-3xl font-semibold text-center">Expenses</h1>
+              <h1 className="text-3xl font-semibold text-center">
+                Expense Categories
+              </h1>
               <Doughnut
                 typeof="pie"
                 data={expenseDataCalculation()}

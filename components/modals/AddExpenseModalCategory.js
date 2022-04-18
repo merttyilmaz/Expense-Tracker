@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useExpense } from "../../context/ExpenseContext";
-
+//This component is a modal that allows the user to add an expense category
 export default function AddExpenseModalCategory({ show }) {
   const nameRef = useRef();
   const maxRef = useRef();

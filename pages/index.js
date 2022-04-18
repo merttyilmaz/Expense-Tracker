@@ -9,7 +9,7 @@ export default function Home() {
   const [showAddIncomeModal, setShowAddIncomeModal] = useState(false);
   const [showAddExpenseModal, setShowAddExpenseModal] = useState(false);
   const { incomes } = useExpense();
-
+  //This function validates if a income is already added or else if gives a user to add a income
   const incomeController = (e) => {
     if (incomes?.length === 0) {
       window.alert("Please add an income first");
@@ -26,7 +26,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="p-3 sm:p-10 ">
+      <main className="flex-grow p-3 sm:p-10 ">
         <div className="flex flex-col max-w-screen-xl gap-10 p-8 mx-auto my-10 bg-white rounded-lg">
           <div className="flex flex-col items-center justify-center sm:flex-row sm:justify-between">
             <div>

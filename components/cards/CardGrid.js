@@ -3,7 +3,7 @@ import { useExpense } from "../../context/ExpenseContext";
 
 import Card from "./BaseCard";
 import TotalIncomeCard from "./TotalIncomeCard";
-
+//This component is used as a CSS grid to display the cards.
 export default function CardGrid() {
   const [expensesCategories, setExpensesCategories] = useState([]);
   const { expenseCategories, getExpenses } = useExpense();
