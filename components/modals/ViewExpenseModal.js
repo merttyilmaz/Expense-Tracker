@@ -7,7 +7,6 @@ export default function ViewIncomeModal({ show, name, id }) {
   const deleteCategory = () => {
     deleteExpenseCategory(id);
     show(false);
-    window.location.reload();
   };
 
   return (
@@ -30,7 +29,6 @@ export default function ViewIncomeModal({ show, name, id }) {
               className="h-8 px-2 text-xl text-white bg-red-500 cursor-pointer"
               onClick={() => {
                 show(false);
-                window.location.reload();
               }}
             >
               X

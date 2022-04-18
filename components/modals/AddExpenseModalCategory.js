@@ -15,7 +15,6 @@ export default function AddExpenseModalCategory({ show }) {
     });
 
     show(false);
-    window.location.reload();
   };
 
   return (

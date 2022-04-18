@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import { currencyFormatter } from "../../utils";
 import AddExpenseModal from "../../components/modals/AddExpenseModal";
 import ViewExpenseModal from "../../components/modals/ViewExpenseModal";
@@ -47,7 +46,7 @@ export default function ExpenseCard({ name, amount, max, id, total }) {
       style={overExpenseLimit()}
     >
       <div className="flex flex-col items-center justify-between gap-5 text-3xl sm:gap-0 sm:flex-row">
-        <div>{name}</div>
+        <div className="flex text-center ">{name}</div>
         <div>
           {currencyFormatter.format(amount)}
           <span className="text-2xl text-gray-500">

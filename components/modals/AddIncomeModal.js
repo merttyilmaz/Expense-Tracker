@@ -19,7 +19,6 @@ export default function AddIncomeModal({ show }) {
     addIncome({
       name: nameRef.current.value,
       amount: parseFloat(oneTimePaymentRef.current?.value),
-
       monthlyAmount: parseFloat(monthlyPaymentRef.current?.value),
       monthCount: Number(monthRef.current?.value),
     });
