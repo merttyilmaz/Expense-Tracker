@@ -9,6 +9,12 @@ export default function AddExpenseModalCategory({ show }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (nameRef.current?.value === "" || maxRef.current?.value === "") {
+      window.alert("Please fill all the fields");
+
+      return;
+    }
+
     addExpenseCategory({
       name: nameRef.current.value,
       max: parseFloat(maxRef.current?.value),
@@ -24,7 +30,8 @@ export default function AddExpenseModalCategory({ show }) {
           <div className="flex justify-between gap-20 mb-10 text-zinc-600">
             <h1 className="text-2xl font-bold">Add Expense Category</h1>
             <span
-              className="px-2 text-xl text-white bg-red-500 cursor-pointer"
+              aria-label="close"
+              className="px-2 text-xl text-white bg-red-500 rounded-md cursor-pointer"
               onClick={() => {
                 show(false);
               }}

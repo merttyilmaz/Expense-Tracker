@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { currencyFormatter } from "../../utils";
 import AddExpenseModal from "../../components/modals/AddExpenseModal";
 import ViewExpenseModal from "../../components/modals/ViewExpenseModal";
@@ -33,8 +33,8 @@ export default function ExpenseCard({ name, amount, max, id, total }) {
   };
 
   const overExpenseLimit = () => {
-    if (amount > max) {
-      return { backgroundColor: "rgba(255, 0, 0, 0.2)" };
+    if (amount >= max) {
+      return { backgroundColor: "rgba(255, 0, 0, 0.1)" };
     } else if (total) {
       return { backgroundColor: "white" };
     }

@@ -15,16 +15,26 @@ export default function AddIncomeModal({ show }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      nameRef.current?.value === "" ||
+      oneTimePaymentRef.current?.value === "" ||
+      monthlyPaymentRef.current?.value === "" ||
+      monthRef.current?.value === ""
+    ) {
+      window.alert("Please fill all the fields");
+
+      return;
+    }
 
     addIncome({
       name: nameRef.current.value,
-      amount: parseFloat(oneTimePaymentRef.current?.value),
-      monthlyAmount: parseFloat(monthlyPaymentRef.current?.value),
-      monthCount: Number(monthRef.current?.value),
+      amount: parseFloat(oneTimePaymentRef.current?.value ?? 0),
+      monthlyAmount: parseFloat(monthlyPaymentRef.current?.value ?? 0),
+      monthCount: Number(monthRef.current?.value ?? 0),
     });
 
     show(false);
-    window.location.reload();
+    //window.location.reload();
   };
 
   return (
@@ -34,7 +44,8 @@ export default function AddIncomeModal({ show }) {
           <div className="flex justify-between gap-20 mb-10 text-zinc-600">
             <h1 className="text-2xl font-bold">Add Income </h1>
             <span
-              className="px-2 text-xl text-white bg-red-500 cursor-pointer"
+              aria-label="close"
+              className="px-2 text-xl text-white bg-red-500 rounded-md cursor-pointer"
               onClick={() => {
                 show(false);
               }}

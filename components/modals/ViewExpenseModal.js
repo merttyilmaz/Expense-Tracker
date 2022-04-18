@@ -26,7 +26,8 @@ export default function ViewIncomeModal({ show, name, id }) {
               </button>
             </div>
             <span
-              className="h-8 px-2 text-xl text-white bg-red-500 cursor-pointer"
+              aria-label="close"
+              className="h-8 px-2 text-xl text-white bg-red-500 rounded-md cursor-pointer"
               onClick={() => {
                 show(false);
               }}

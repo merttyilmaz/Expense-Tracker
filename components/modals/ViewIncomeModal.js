@@ -11,7 +11,8 @@ export default function ViewIncomeModal({ show }) {
           <div className="flex justify-between gap-20 mb-10 text-zinc-600">
             <h1 className="text-2xl font-bold">View Incomes </h1>
             <span
-              className="px-2 text-xl text-white bg-red-500 cursor-pointer"
+              aria-label="close"
+              className="px-2 text-xl text-white bg-red-500 rounded-md cursor-pointer"
               onClick={() => {
                 show(false);
               }}

@@ -30,7 +30,11 @@ export default function FinancialForecast() {
 
   const incomeDataCalculation = () => {
     const labels = incomes?.map((income) => income.name);
-    const data = incomes?.map((income) => income.amount);
+    const data = incomes?.map((income) => {
+      if (income.monthCount !== 0) {
+        return income.monthCount * income.monthlyAmount;
+      } else return income.amount;
+    });
 
     return {
       labels: labels,

@@ -21,12 +21,21 @@ export default function Header() {
       <div className="flex items-center justify-between max-w-screen-xl pl-3 pr-0 mx-auto bg-white sm:px-6 rounded-xl">
         <div className="cursor-pointer">
           <Link href="/">
-            <Image src={logo} alt="Expense Tracker" height={110} width={120} />
+            <a>
+              <Image
+                src={logo}
+                alt="Expense Tracker"
+                height={110}
+                width={120}
+              />
+            </a>
           </Link>
         </div>
         <ul className="flex justify-center gap-4 text-xl font-semibold list-none sm:gap-20">
           <Link href="/">
-            <li className="self-center cursor-pointer">Tracker</li>
+            <a>
+              <li className="self-center cursor-pointer">Tracker</li>
+            </a>
           </Link>
 
           <li

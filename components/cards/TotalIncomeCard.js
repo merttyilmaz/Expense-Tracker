@@ -4,31 +4,34 @@ import BaseCard from "./BaseCard";
 
 export default function TotalIncomeCard({ show }) {
   const { expenses, incomes } = useExpense();
-  const [max, setMax] = useState(0);
+  const [maxAmount, setMaxAmount] = useState(0);
   const [amount, setAmount] = useState(0);
 
   useEffect(() => {
-    let maxAmount = 0;
-    let amount = 0;
+    let max = 0;
 
-    amount = expenses?.reduce((total, expense) => total + expense.amount, 0);
+    const amount = expenses?.reduce(
+      (total, expense) => total + expense.amount,
+      0
+    );
+
     incomes?.map((income) => {
-      if (income.monthCount !== 0 && income.monthCount !== null) {
-        maxAmount += income.monthlyAmount * income.monthCount;
+      if (income.monthCount && income.monthCount !== null) {
+        max += income.monthlyAmount * income.monthCount;
       } else {
-        maxAmount += income.amount;
+        max += income.amount;
       }
     });
 
-    setMax(maxAmount);
+    setMaxAmount(max);
     setAmount(amount);
-  }, [expenses, incomes]);
+  }, [incomes, expenses]);
 
   return (
     <BaseCard
       name="Total Income Spent / Earned"
       amount={amount}
-      max={max}
+      max={maxAmount}
       show={show}
       total
     />
