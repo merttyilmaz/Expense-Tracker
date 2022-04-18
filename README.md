@@ -1,34 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+I used Next.js and Tailwind CSS. Next.js has file based routing so no need for a routing mechanism. Project structure is made up of components, context and hooks folders as well as a file called util.js which houses a currencyFormatter function. Component folder houses custom or reusable components. Context folder houses useContext hook and related state and functions. Hook folder houses all my custom hooks. I have only one which is useLocalStorage hook.
+----------------------------------------------------------------------------------------------
+Hardest thing I did in this project was adding the localStorage hook because Next.js is a server side rendering framework which means that it renders on the server and html is sent to the client. Servers don't have localStorage so the workaround for it is that we have add  
+checks and controls to see if the code is on the server or the client.
+----------------------------------------------------------------------------------------------
+![image](https://user-images.githubusercontent.com/38688568/163854122-00a621d8-fd07-4700-bb13-af5f7748961d.png)
+User has to add an income source first. Then he has to add an expense category like bills or entertainment.
+![image](https://user-images.githubusercontent.com/38688568/163855289-4b4127dc-1427-4acf-80af-691be853562b.png)
+After adding a expense category you can add an expense to the category by pressing add expense button. Adding expense increases both the related categories and total incomes progress bars.
+![image](https://user-images.githubusercontent.com/38688568/163855920-3c56be0b-6600-42ae-a907-54eaae1ca930.png)
+Financial Forecast page shows the percantages of incomes and expense categories. Expense Categorieses values(expenses) are made up of the related category. I didn't create a real forecast because it requires minimum of 2 dataset to calculate and suggest things.
+----------------------------------------------------------------------------------------------
+yarn or npm i to install dependencies. yarn dev or npm run dev to start development build.
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
