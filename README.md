@@ -1,10 +1,12 @@
+PROJECT STRUCTURE
 I used Next.js and Tailwind CSS. Next.js has file based routing so no need for a routing mechanism. Project structure is made up of components, context and hooks folders as well as a file called util.js which houses a currencyFormatter function. Component folder houses custom or reusable components. Context folder houses useContext hook and related state and functions. Hook folder houses all my custom hooks. I have only one which is useLocalStorage hook.
 
 ----------------------------------------------------------------------------------------------
-
+BIGGEST CHALLENGE DURING DEVELOPMENT 
 Hardest thing I did in this project was adding the localStorage hook because Next.js is a server side rendering framework which means that it renders on the server and HTML is sent to the client. Servers don't have localStorage so the workaround for it is that we have to add checks and controls to see if the code is on the server or the client.
 
 ----------------------------------------------------------------------------------------------
+APP EXPLANATION USING PICTURES
 
 ![image](https://user-images.githubusercontent.com/38688568/163854122-00a621d8-fd07-4700-bb13-af5f7748961d.png)
 
